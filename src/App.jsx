@@ -15,8 +15,7 @@ function App() {
     try {
       // aqui van todas las lineas de código que quiero
       const respuesta = await fetch(
-        "https://dragonball-api.com/api/characters/1"
-      );
+        "https://dragonball-api.com/api/characters/"+personajeAleatorio());
       console.log(respuesta);
       if (respuesta.status === 200) {
         const datos = await respuesta.json();
@@ -24,14 +23,20 @@ function App() {
         setDatoPersonaje(datos)
       }
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   };
 
+  const personajeAleatorio = ()=>{
+    return Math.floor(Math.random() * (40-1+1+1)+1);
+  }
+
+  // nombreProps valor que envío debe ser el nombre del state, va entre {}
   return (
     <main className="container my-5 text-center">
       <img src={logo} alt="Logo de Dragon Ball Z" className="w-50 mb-4" />
-      <Personaje></Personaje>
+      <Personaje dataPersonaje={dataPersonaje}></Personaje> 
+      
       <Button variant="danger" className="mt-4">
         Obtener personaje
       </Button>

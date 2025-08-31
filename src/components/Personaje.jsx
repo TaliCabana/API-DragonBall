@@ -1,19 +1,19 @@
 import { Card, Button, CardHeader } from "react-bootstrap";
 
-const Personaje = () => {
+const Personaje = ({dataPersonaje}) => {
   return (
     <Card>
-      <Card.Header className="fw-bold fs-3">Goku</Card.Header>
+      <Card.Header className="fw-bold fs-3">{dataPersonaje.name}</Card.Header>
       <Card.Img
         variant="top"
-        src="https://dragonball-api.com/characters/goku_normal.webp" className="img-card"
+        src={dataPersonaje.image} className="img-card"
       />
       <Card.Body>
         <Card.Title>Caracterísiticas</Card.Title>
         <ul className="list-group">
-          <li className="list-group-item">Raza: Saiyan</li>
-          <li className="list-group-item">ki: 60.000.000</li>
-          <li className="list-group-item">Grupo: "Z Finghter"</li>
+          <li className="list-group-item">Raza: {dataPersonaje.race}</li>
+          <li className="list-group-item">ki: {dataPersonaje.ki}</li>
+          <li className="list-group-item">Grupo: {dataPersonaje.affiliation}</li>
         </ul>
       </Card.Body>
     </Card>
