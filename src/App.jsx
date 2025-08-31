@@ -37,7 +37,7 @@ function App() {
       <img src={logo} alt="Logo de Dragon Ball Z" className="w-50 mb-4" />
       <Personaje dataPersonaje={dataPersonaje}></Personaje> 
       
-      <Button variant="danger" className="mt-4">
+      <Button variant="danger" className="mt-4" onClick={consultaAPI}>
         Obtener personaje
       </Button>
     </main>
