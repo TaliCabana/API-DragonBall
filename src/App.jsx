@@ -16,6 +16,8 @@ function App() {
   const consultaAPI = async () => {
     try {
       // aqui van todas las lineas de código que quiero
+
+      setLoading(true)
       const respuesta = await fetch(
         "https://dragonball-api.com/api/characters/" + personajeAleatorio()
       );
@@ -25,7 +27,8 @@ function App() {
         console.log(datos);
         setDatoPersonaje(datos);
         setLoading(false);
-      }
+      } else
+        alert("Error en la consulta de la API")
     } catch (error) {
       console.error(error);
     }
