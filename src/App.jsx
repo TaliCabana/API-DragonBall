@@ -1,5 +1,5 @@
 import Personaje from "./components/Personaje";
-import logo from "./assets/Dragon_Ball_Z_logo.svg";
+import logo from "./assets/dragon_ball_z_logo.svg";
 import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { PacmanLoader } from "react-spinners";
